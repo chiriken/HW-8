@@ -6,18 +6,18 @@ public class Main {
 
     public static void main(String[] args) {
         //task 1//
-        reply(2220);
+        reply(1862);
         //task 2//
         phoneSystem(1, 2200);
         //task 3//
-        DeliveryTime(50);
+        deliveryTime(50);
     }
     //task 1//
     public static void reply(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
-            System.out.println(year + " год — високосный год");
+            System.out.println(year + "— високосный год");
         } else {
-            System.out.println(year + " год — невисокосный год");
+            System.out.println(year + " — невисокосный год");
         }
     }
     //task 2//
@@ -39,7 +39,7 @@ public class Main {
         }
     }
     //task 3//
-    public static void DeliveryTime (int deliveryDistance){
+    public static void deliveryTime (int deliveryDistance){
         if (deliveryDistance < 0) {
             System.out.println("Неверная дистанция доставки");
         } else if (deliveryDistance < 20) {
@@ -55,9 +55,6 @@ public class Main {
 
 
     }
-
-
-
 
 
 
