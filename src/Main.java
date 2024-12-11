@@ -1,59 +1,63 @@
 import java.util.Arrays;
 
 public class Main {
+
+
+
     public static void main(String[] args) {
-        // task 1 //
-
-        int[] tally = {433521, 41154, 536234, 243095, 1};
-
-        int total =0;
-        for (int i = 0; i < tally.length; i++){
-            total += tally[i];
+        //task 1//
+        reply(2220);
+        //task 2//
+        phoneSystem(1, 2200);
+        //task 3//
+        DeliveryTime(50);
+    }
+    //task 1//
+    public static void reply(int year) {
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " год — високосный год");
+        } else {
+            System.out.println(year + " год — невисокосный год");
         }
-        System.out.println("Сумма трат за месяц составила " + total + " руюблей");
-
-        // task 2 //
-
-        int min = tally[0];
-        int max = tally[1];
-
-
-        for (int i = 0; i < tally.length; i++) {
-            if (tally[i] < min){
-                min = tally[i];
+    }
+    //task 2//
+    public static void phoneSystem(int clientOS, int clientDeviceYear){
+        if (clientOS == 0) {
+            if (clientDeviceYear >= 2015) {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
             }
-            if (tally[i] > max){
-                max = tally[i];
+        } else if (clientOS == 1) {
+            if (clientDeviceYear >= 2015) {
+                System.out.println("Установите версию приложения для Android  по ссылке");
+            } else {
+                System.out.println("Установите облегченную версию приложения для Android по ссылке");
             }
+        } else {
+            System.out.println("Неподдерживаемая операционная система");
         }
-        System.out.println("Максимальная сумма трат за неделю составила " + max + " рублей");
-        System.out.println("Минимальная сумма трат за неделю составила " + min + " рублей");
-
-        // task 3 //
-
-        double total1 = (double) total / tally.length;
-        System.out.println("Средняя сумма трат за месяц составила " + total1 + " рублей");
-
-        // task 4 //
-
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-
-        for (int i = 0; i < reverseFullName.length / 2; i++) {
-         int oneInedex = i;
-         int lastIdex = reverseFullName.length - i -1;
-
-         char tmp = reverseFullName[oneInedex];
-         reverseFullName[oneInedex] = reverseFullName[lastIdex];
-         reverseFullName[lastIdex] = tmp;
+    }
+    //task 3//
+    public static void DeliveryTime (int deliveryDistance){
+        if (deliveryDistance < 0) {
+            System.out.println("Неверная дистанция доставки");
+        } else if (deliveryDistance < 20) {
+            System.out.println("Потребуется 1 день");
+        } else if (deliveryDistance < 60) {
+            System.out.println("Потребуется 2 дня");
+        } else if (deliveryDistance <= 100) {
+            System.out.println("Потребуется 3 дня");
+        } else {
+            System.out.println("Доставки нет за пределы 100 км(((");
         }
-        for (int i = 0; i < reverseFullName.length; i++) {
-            System.out.print(reverseFullName[i]);
-        }
-
-
-
-
 
 
     }
+
+
+
+
+
+
 }
